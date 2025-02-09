@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="atm" class="card">
+            <h2>ATM Withdrawal</h2>
+            <form onsubmit="atmWithdrawal(event)">
+                <input type="number" id="pin" placeholder="Set PIN" required>
+                <input type="number" id="enterpin" placeholder="Enter PIN" required>
+                <input type="number" id="balance" placeholder="Enter Balance" required>
+                <input type="number" id="amount" placeholder="Enter Amount" required>
+                <button type="submit">Withdraw</button>
+            </form>
+            <p id="withdraw"></p>
+        </section>
+
+        <section id="shopping" class="card">
+            <h2>Online Shopping</h2>
+            <p>Discount and Shipping Offers</p>
+            <form onsubmit="calculateFinalAmount(event)">
+                <input type="number" id="orders" placeholder="Enter order amount" required>
+                <button type="submit">Buy Now</button>
+            </form>
+            <p>Discount: <span id="discountAmount">$0.00</span></p>
+            <p>Shipping: <span id="shippingCharge">$0.00</span></p>
+            <p>Total: <span id="finalAmount">$0.00</span></p>
+        </section>
+
+        <section id="grading" class="card">
+            <h2>Student Grading System</h2>
+            <form onsubmit="calculateGrade(event)">
+                <input type="number" id="marks" placeholder="Enter Marks" min="0" max="100" required>
+                <input type="number" id="attendance" placeholder="Enter Attendance %" min="0" max="100">
+                <button type="submit">Calculate</button>
+            </form>
+            <p>Final Grade: <span id="grade">N/A</span></p>
+        </section>
+
+        <section id="traffic" class="card">
+            <h2>Traffic Light System</h2>
+            <select onchange="trafficLightControl()" id="density">
+                <option value="Not Selected">Not Selected</option>
+                <option value="Heavy Traffic">Heavy Traffic</option>
+                <option value="Moderate Traffic">Moderate Traffic</option>
+                <option value="Light Traffic">Light Traffic</option>
+            </select>
+            <p id="trafficSignal"></p>
+        </section>
+
+        <section id="movies" class="card">
+            <h2>Movie Ticket Pricing</h2>
+            <form onsubmit="calculateTicketPrice(event)">
+                <input type="number" id="ages" placeholder="Enter Age" required>
+                <input type="time" id="time" required>
+                <button type="submit">Book</button>
+            </form>
+            <p>Final Price: <span id="final"></span></p>
+        </section>
+        <section id="job" class="card">
+            <h2>Job Application Filter</h2>
+            <form onsubmit="isEligibleForJob(event)">
+                <input type="number" id="age" placeholder="Enter Age" required>
+                <input type="number" id="experience" placeholder="Enter Experience (Years)" required>
+                <select id="study">
+                    <option value="Select">Select Qualification</option>
+                    <option value="Bachelor's Degree">Bachelor's Degree</option>
+                </select>
+                <button type="submit">Submit</button>
+            </form>
+            <p id="eligible"></p>
+        </section>
+
+        <section id="ecommerce" class="card">
+            <h2>E-commerce Coupon Redemption</h2>
+            <form onsubmit="applyCoupon(event)">
+                <input type="number" id="totalOrder" placeholder="Enter Order Amount" required>
+                <select id="coupons">
+                    <option value="select">Select Coupon</option>
+                    <option value="DISCOUNT10">DISCOUNT10</option>
+                    <option value="FREESHIP">FREESHIP</option>
+                </select>
+                <button type="submit">Apply</button>
+            </form>
+            <p id="cart"></p>
+        </section>
+
+        <section id="fitness" class="card">
+            <h2>Fitness Membership Plan</h2>
+            <form onsubmit="choosePlan(event)">
+                <select id="plan">
+                    <option value="Basic">Basic ($20/month) - Gym Access</option>
+                    <option value="Premium">Premium ($50/month) - Gym + Trainer</option>
+                    <option value="VIP">VIP ($80/month) - Gym + Trainer + Diet Plan</option>
+                </select>
+                <div class="checkbox-container">
+                    <input type="checkbox" id="trainer"> Personal Trainer
+                </div>
+                <div class="checkbox-container2">
+                    <input type="checkbox" id="diet"> Diet Plan
+                </div>
+                <button type="submit">Recommend Plan</button>                
+            </form>
+            <p id="finalPlan"></p>
+        </section>
+
+        <section id="electricity" class="card">
+            <h2>Electricity Bill Calculation</h2>
+            <form onsubmit="calculateElectricityBill(event)">
+                <input type="time" id="Time" required>
+                <input type="number" id="unit" min="0" placeholder="Enter Units" required>
+                <button type="submit">Calculate</button>
+            </form>
+            <p>Final Bill: <span id="calculate">$0.00</span></p>
+        </section>
+
+        <section id="flight" class="card">
+            <h2>Flight Ticket Booking</h2>
+            <form onsubmit="calculateFlightFare(event)">
+                <select id="class">
+                    <option value="Economy">Economy</option>
+                    <option value="Business">Business (+$200)</option>
+                    <option value="First">First (+$500)</option>
+                </select>
+                <input type="number" id="yourAge" min="1" placeholder="Enter Your Age " required>
+                <input type="number" id="luggage" min="0" placeholder="Enter Luggage Weight (kg)">
+                <div class="checkbox-container">
+                    <input type="checkbox" id="student"> Student
+                </div>
+                <button type="submit">Check Fare</button>                
+            </form>
+            <p id="finalPrice"></p>
+        </section>
+
+    </main>
+
+    <script src="index.js"></script>
+</body>
+</html>
